@@ -1,4 +1,4 @@
-# Unofficial HackerOne API
+# HackerOne Organisation API: Unofficial
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/studiogangster/hackerone_org_api/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/studiogangster/hackerone_org_api.svg)](https://github.com/studiogangster/hackerone_org_api/stargazers)
