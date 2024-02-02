@@ -243,7 +243,7 @@ def get_last_issue():
 
     print("pages", pages)
     print("count", count)
-    return int(ids[0])
+    return int( bugs[0]["id"]  )
 
 
 def get_issues_detail(id):
@@ -297,6 +297,8 @@ def main():
     if DEBUG_MODE:
         last_cursor = state_manager.get_last_cursor_id()
         last_cursor = last_cursor - 4000
+        if last_cursor < 0:
+            last_cursor = 0
         state_manager.set_last_cursor_id(last_cursor)
 
     if logged_in:
