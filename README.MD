@@ -5,7 +5,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/studiogangster/hackerone_org_api.svg)](https://github.com/studiogangster/hackerone_org_api/network)
 [![GitHub issues](https://img.shields.io/github/issues/studiogangster/hackerone_org_api.svg)](https://github.com/studiogangster/hackerone_org_api/issues)
 
-## Usage
+## 🚀 Usage
 
 1. **Install Poetry:**
 
