@@ -3,6 +3,7 @@ import traceback
 from bs4 import BeautifulSoup
 import json
 import pickle
+import time
 import http.cookiejar
 import requests
 from tinydb import TinyDB, Query
@@ -328,7 +329,6 @@ def main():
 
         for id in new_bug_ids:
             print("bug_id", id , last_cursor)
-            continue
             try:
                 report = get_issues_detail(id)
                 print(report)
@@ -342,6 +342,9 @@ def main():
 if __name__ == "__main__":
     # Initialize StateManager
     while True:
+
+        last_time = time.strftime('%l:%M%p %Z on %b %d, %Y')
+        print(last_time)
         session = NewSession()
         main()
         sleep(SLEEP_INTERVAL)
