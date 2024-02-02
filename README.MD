@@ -17,4 +17,30 @@
 
    ```bash
    poetry shell
+    ```
+2. **nvironment Variables:**
+    1. Ensure sample_env is moved to .env in your project root.
+    2. Customize the variables in the .env file according to your specific needs.
+
+    ```
+    mv sample_env .env
+    ```
+    # Update the variables in the .env file with the required values.
+
+## Now, your application is up and running, ready to integrate with HackerOne seamlessly!
+
+
+
+
+3. **Run the application:**
+
+    Start the main script using Python. You can either run it directly:
+
+    ```
+    python main.py
+    ```
+    # Or use nohup to run it in the background:
+    ```
+    nohup python main.py &
+    ```
 
