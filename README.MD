@@ -31,16 +31,15 @@
 
 
 
-3. **Run the application:**
+3. **Evoke the incantation - Run the application:**
 
-    Start the main script using Python. You can either run it directly:
-
+    🚀 Cast the spell to awaken the main script using Python. You can either unleash it directly:
     ```
     python main.py
     ```
-    # Or use nohup to run it in the background:
+    🌌 Or channel the energy using nohup to let it dance in the mystical background:
     ```
     nohup python main.py &
     ```
 
-## Now, your application is up and running, ready to integrate with HackerOne seamlessly!
+### ✨ Behold! Your application is now awakened, ready to harmonize with HackerOne seamlessly!
