@@ -21,6 +21,9 @@ WEBHOOK_URL = os.getenv('WEBHOOK_URL')
 COOKIE_FILE = os.getenv('COOKIE_FILE')
 LOGIN_EMAIL = os.getenv('LOGIN_EMAIL')
 LOGIN_PASSWORD = os.getenv('LOGIN_PASSWORD')
+HACKERONE_ORG_HANDLE = os.getenv('HACKERONE_ORG_HANDLE')
+
+
 
 # ... (rest of your code)
 LAST_CURSOR_ID = "LAST_CURSOR_ID"
@@ -201,7 +204,7 @@ def get_issues(last_cursor=0):
     _headers = headers.copy()
     _headers["X-Csrf-Token"] = token
     _headers["Content-Type"] = "application/json"
-    url = "https://hackerone.com/bugs.json?subject=til&report_id=0&view=custom&substates%5B%5D=new&substates%5B%5D=triaged&substates%5B%5D=needs-more-info&substates%5B%5D=resolved&substates%5B%5D=informative&substates%5B%5D=not-applicable&substates%5B%5D=duplicate&substates%5B%5D=spam&substates%5B%5D=retesting&reported_to_team=&text_query=&program_states%5B%5D=2&program_states%5B%5D=3&program_states%5B%5D=4&program_states%5B%5D=5&sort_type=submitted_at&sort_direction=descending&limit=1000&page=1"
+    url = f"https://hackerone.com/bugs.json?subject={HACKERONE_ORG_HANDLE}&report_id=0&view=custom&substates%5B%5D=new&substates%5B%5D=triaged&substates%5B%5D=needs-more-info&substates%5B%5D=resolved&substates%5B%5D=informative&substates%5B%5D=not-applicable&substates%5B%5D=duplicate&substates%5B%5D=spam&substates%5B%5D=retesting&reported_to_team=&text_query=&program_states%5B%5D=2&program_states%5B%5D=3&program_states%5B%5D=4&program_states%5B%5D=5&sort_type=submitted_at&sort_direction=descending&limit=1000&page=1"
     response = session.post(url, headers=_headers,
                             proxies=proxies, verify=False)
     print(response.status_code)
@@ -230,7 +233,7 @@ def get_last_issue():
     _headers = headers.copy()
     _headers["X-Csrf-Token"] = token
     _headers["Content-Type"] = "application/json"
-    url = "https://hackerone.com/bugs.json?subject=til&report_id=0&view=custom&substates%5B%5D=new&substates%5B%5D=triaged&substates%5B%5D=needs-more-info&substates%5B%5D=resolved&substates%5B%5D=informative&substates%5B%5D=not-applicable&substates%5B%5D=duplicate&substates%5B%5D=spam&substates%5B%5D=retesting&reported_to_team=&text_query=&program_states%5B%5D=2&program_states%5B%5D=3&program_states%5B%5D=4&program_states%5B%5D=5&sort_type=submitted_at&sort_direction=descending&limit=10&page=1"
+    url = f"https://hackerone.com/bugs.json?subject={HACKERONE_ORG_HANDLE}&report_id=0&view=custom&substates%5B%5D=new&substates%5B%5D=triaged&substates%5B%5D=needs-more-info&substates%5B%5D=resolved&substates%5B%5D=informative&substates%5B%5D=not-applicable&substates%5B%5D=duplicate&substates%5B%5D=spam&substates%5B%5D=retesting&reported_to_team=&text_query=&program_states%5B%5D=2&program_states%5B%5D=3&program_states%5B%5D=4&program_states%5B%5D=5&sort_type=submitted_at&sort_direction=descending&limit=10&page=1"
     response = session.post(url, headers=_headers,
                             proxies=proxies, verify=False)
     print(response.status_code)

@@ -5,3 +5,4 @@ WEBHOOK_URL=https://<webhook-endpoint>
 COOKIE_FILE=session_cookies.txt
 LOGIN_EMAIL=<hackerone_email>
 LOGIN_PASSWORD=<hackerone_password>
+HACKERONE_ORG_HANDLE=<hackerone_handle_for_org>
