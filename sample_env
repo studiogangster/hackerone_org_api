@@ -1,0 +1,7 @@
+# Move to .env
+# mv sample_env .env
+
+WEBHOOK_URL=https://<webhook-endpoint>
+COOKIE_FILE=session_cookies.txt
+LOGIN_EMAIL=<hackerone_email>
+LOGIN_PASSWORD=<hackerone_password>
