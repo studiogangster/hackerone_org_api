@@ -342,11 +342,16 @@ def main():
 if __name__ == "__main__":
     # Initialize StateManager
     while True:
+        try:
 
-        last_time = time.strftime('%l:%M%p %Z on %b %d, %Y')
-        print(last_time)
-        session = NewSession()
-        main()
+            last_time = time.strftime('%l:%M%p %Z on %b %d, %Y')
+            print(last_time)
+            session = NewSession()
+            main()
+        except:
+            traceback.print_exc()
+            
+            pass
         sleep(SLEEP_INTERVAL)
 
 # Initialize session with custom cookie handling
