@@ -1,20 +1,26 @@
 # Use the official Python image as a base image
-FROM python:3.10
+FROM python:3.9
 
-# Set the working directory to /app
-WORKDIR /app
+RUN apt-get update \
+    && apt-get install curl -y \
+    && curl -sSL https://install.python-poetry.org | python - 
+
+ENV PATH="/root/.local/bin:$PATH"
 
 # Copy the poetry files to the working directory
-COPY pyproject.toml poetry.lock /app/
-COPY .env /app/.env
+WORKDIR /app
+COPY poetry.lock pyproject.toml /app/
 
-# Install Poetry and project dependencies
-RUN pip install poetry && \
-    poetry config virtualenvs.create false && \
-    poetry install --no-dev
-
+# RUN poetry config virtualenvs.create false
 # Copy the rest of the application code to the working directory
 COPY . /app/
 
+ENV PYTHONUNBUFFERED=1
+# RUN poetry env use 3.9
+# RUN [ "poetry",  "shell" ]
+RUN poetry install 
+
 # Specify the command to run on container start
-CMD ["poetry", "run", "python", "main.py"]
+# CMD [ "poetry", "run" "python", "-u", "main.py"]
+CMD ["poetry", "run", "python", "-u", "main.py"]
+

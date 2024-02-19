@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "8080:8080"  # Adjust the port mapping as needed
+    restart: always
     volumes:
       - .:/app  # Mount the current directory to /app in the container
